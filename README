@@ -1,0 +1,95 @@
+-------------------------------IMPLEMENTARE--------------------------------
+
+Deschidere ghisee:
+   Am luat doua cazuri, cand nu exista ghisee si atunci cand exista ghisee
+   
+   In primul caz daca nu existau se aloca numarul de ghisee N cerut si se 
+   salveaza in variabila globala, in caz ca se adauga un singur ghiseu atunci
+   nu se va salva variabila global pentru a putea aloca mai tarziu un ghiseu
+   pentru a salva persoanele fara a modifica variabila globala.
+
+   In al doilea caz in care trebuie modficat numarul de ghisee salvez toate 
+   persoanele intr-un ghiseu pe care il creez nou ( un vector de un ghiseu )
+   pentru a folosi functia de adauga in care copiez toate persoanele din ghisee
+   in noul ghiseu, ele se copiaza sortate pentru ca functia adauga sorteaza 
+   persoanele. Dupa copiere imi golosc ghiseele apoi creez o variabila de tip
+   List** ghi in numar de N ghisee cerute la redimensionare, copiez toate 
+   elementele in ordinea ceruta, dezaloc memoria de pe ghiseul facut inainte
+   apoi atribui variabilei (*ghisee) adresa lui ghi apoi se actualizeaza va-
+   riabila globala la noul numar de ghisee.
+
+Inchide ghisee:
+
+   Functia dezaloca fiecare persoana in parte de pe fiecare ghiseu iar apoi se
+   sterge ghiseul respectiv iar apoi vectorul de ghisee.
+
+Adauga persoane:
+
+   Functia aloca o celula in care se salveaza prioritatea si numele persoanei 
+   care urmeaza sa fie alocata iar apoi se verifica daca functia este nula 
+   atunci il aloca primul, daca exista o singura persoana se verifica daca se
+   adauga primul. Daca nu este nici unul din cazuri variabile atunci o sa 
+   intra pe un while unde se verifica daca este ultimul sau daca elementul se
+   poate baga intre alte doua elemente, in caz ca persoanele au aceias priori-
+   tate atunci se sorteaza in functie de nume cu functia strcmp care imi com-
+   para cele doua nume acolo sunt cazuri cand numele sunt egale sau se intro-
+   duc in ordine fata de nume.
+
+Sterge persoana:
+
+   In caz ca numarul de ghiseu dat este mai mare decat numarul de ghisee sau 
+   ghiseul este null atunci se iese din secventa.
+   Salvez capul ghiseului intr-o variabila de pornire apoi verific daca per-
+   soana cautata este prima, daca este prima atunci o sterge atlfel se par-
+   curge ghiseul pana se gaseste persoana daca se gaseste iar apoi se sterge,
+   in caz ca persoana nu exista atunci se iese din secventa, as fii putut sa
+   folosesc functia de afiseaza persoana la inceput sa verific daca exista
+   dar am facut functia undeva pe la sfarsit si nu am mai modificat! xD
+
+Sterge primii oameni:
+
+   Folosesc un for de la 0 la numarul de ghisee unde in prim pas salvez capul
+   ghiseululi apoi incep sa-l parcurg dar prima data verific daca este null
+   daca este null atunci se va trece la urmatorul ghiseul si tot asa.
+
+Calculeaza numar oameni ghiseul:
+
+   Functia verifica daca exista un ghiseul cu numarul respectiv sau daca ghi-
+   seul nu este null, daca sunt indeplinite conditile se parcurge ghiseul 
+   pana accesta devine null mereu cand nu este null exista un count care o 
+   sa creasca pana devine null apoi se returneaza count care reprezinta numa-
+   rul de persoane din ghiseu.
+
+Calculeaza numarul total de oameni:
+
+   Daca se trec conditile asemanatoare ca la calculeaza nr oameni pe ghiseu
+   atunci se intra intr-un for de la 0 la nr total de ghisee unde este un
+   count care primeste count + Calculeaza numar oameni ghiseu(i), adica se 
+   apeleaza functia de numar total oameni pe ghiseu, la sfarsit se returneaza
+   numarul count care reprezinta numarul total de oameni.
+
+Gaseste pozitie persoana:
+
+   Aceleasi conditii ca la ultimele doua functii, daca le trece atunci cat timp
+   ghiseul nu este null se va parcurge cu o copie la ghiseu pana se gaseste 
+   pozitia persoanei si se returneaza pozitia care este preluata de la un count
+   care creste pana este gasita, in caz ca nu se gaseste atunci se va returna 
+   -1.
+
+Gaseste persoana din fata:
+
+   Asemanator ca si functia suplimentara, aceleasi conditii, in caz ca ghiseul
+   are o singura persoana se va returna -1 in caz contrar se parcurge ghiseul
+   intr-o copie pana se gaseste persoana si se va returna numele persoanei
+   anterioare, in caz ca nu este gasita persoana respectiva atunci se va 
+   returna Nu exista.
+
+Afiseaza rand ghiseu:
+
+   Daca numarul de ghiseu primit este mai mare decat numarul de ghisee maxim 
+   atunci se va iesii din structura. In caz ca este indeplinita conditia se
+   parcurge ghiseul cu o copie pana acesta devine null si se afiseaza 
+   la fiecare pas fiecare persoana si prioritatea s-a, la sfarsit afiseaza
+   un \n pentru a nu modifica pozitia afisearea celorlalte rezultate.
+
+-------------------------------IMPLEMENTARE----------------------------------
